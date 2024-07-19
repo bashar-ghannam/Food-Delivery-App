@@ -4,8 +4,9 @@ import './LoginPopup.css';
 import { StoreContext } from '../../context/StoreContext';
 import axios from 'axios';
 
-const LoginPopup = ({ setShowLogin }) => {
-  const { url, setToken } = useContext(StoreContext);
+const LoginPopup = () => {
+  const { url, setToken, fetchCartItems, setShowLogin } =
+    useContext(StoreContext);
   const [currState, setCurrState] = useState('Login');
   const [data, setData] = useState({
     name: '',
@@ -31,6 +32,7 @@ const LoginPopup = ({ setShowLogin }) => {
       if (response.data.success) {
         setToken(response.data.token);
         localStorage.setItem('token', response.data.token);
+        fetchCartItems(response.data.token);
         setShowLogin(false);
       } else {
         alert(response.data.msg);
