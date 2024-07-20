@@ -74,7 +74,7 @@ const StoreContextProvider = (props) => {
     try {
       const response = await axios.get(`${url}/api/food/list`);
       if (response.status === 200 && response.data.success) {
-        setFood_list(response.data.data); // Update state with fetched data
+        setFood_list(response.data.data); 
       } else {
         console.error('Failed to fetch food list:', response.data.msg);
       }

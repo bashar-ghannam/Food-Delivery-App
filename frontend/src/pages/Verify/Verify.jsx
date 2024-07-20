@@ -5,7 +5,7 @@ import { StoreContext } from '../../context/StoreContext';
 import axios from 'axios';
 import { useEffect } from 'react';
 
-const Verfiy = () => {
+const Verify = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const success = searchParams.get('success');
   const orderId = searchParams.get('orderId');
@@ -25,6 +25,7 @@ const Verfiy = () => {
       }
     } catch (error) {
       console.log(error);
+      navigate('/');
     }
   };
 
@@ -39,4 +40,4 @@ const Verfiy = () => {
   );
 };
 
-export { Verfiy };
+export { Verify };
