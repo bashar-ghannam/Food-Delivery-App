@@ -8,6 +8,7 @@ import { Footer } from './components/Footer/Footer';
 import { LoginPopup } from './components/LoginPopup/LoginPopup';
 import { StoreContext } from './context/StoreContext';
 import Notification from './components/Notification/Notification';
+import { Verfiy } from './pages/Verify/Verfiy';
 
 const App = () => {
   const { showLogin } = useContext(StoreContext);
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/order" element={<PlaceOrder />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/verify" element={<Verfiy />} />
         </Routes>
       </div>
       <Footer />
